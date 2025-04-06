@@ -1,0 +1,19 @@
+<idea-plugin>
+    <id>org.jankos.rename-current-commit</id>
+    <name>Rename Commit</name>
+    <vendor>Janko Vukobratovic</vendor>
+    <version>1.0.0</version>
+    <description>Renames the latest Git commit using an amend operation.</description>
+
+    <depends>com.intellij.java</depends>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>Git4Idea</depends>
+    <actions>
+        <action id="org.jankos.RenameCurrentCommitAction"
+                class="org.jankos.RenameCurrentCommitAction"
+                text="Rename Latest Git Commit"
+                description="Renames the latest Git commit using an amend operation.">
+            <add-to-group group-id="VcsGroups" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>

@@ -1,0 +1,38 @@
+plugins {
+    id 'org.jetbrains.intellij.platform' version '2.5.0'
+    id 'java'
+}
+
+group 'org.jankos'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    gradlePluginPortal()
+    intellijPlatform {
+        defaultRepositories()
+    }
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    intellijPlatform {
+        intellijIdeaUltimate('2024.2.4')
+
+        bundledPlugin 'com.intellij.java'
+        bundledPlugin 'Git4Idea'
+    }
+}
+
+tasks {
+    patchPluginXml {
+        changeNotes = """
+            Initial plugin setup.
+        """
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
