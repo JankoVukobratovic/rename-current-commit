@@ -13,6 +13,7 @@ import git4idea.GitUtil;
 import git4idea.commands.Git;
 import org.jetbrains.annotations.NotNull;
 
+
 import java.util.List;
 
 public class RenameCurrentCommitAction extends AnAction{
